@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <link href="/css/TopMenu_Sub.css" th:href="@{/css/TopMenu_Sub.css}" rel="stylesheet"></link>
+   <script type="text/javascript" th:src="@{/js/WebComponent.js}"></script>
+   <title>BMIチェックプログラム
+   </title>
+</head>
+<body>
+   <h1>復習編～BMIチェック～</h1>
+   <p>
+   <form method="get" action="bmioutform">
+      <font size="5"><span th:text="${seibetu}"></span></font>であるあなたのBMI数値は。。。
+   </p>
+      <p>
+         　　<font size="6"><span th:text="${bmisuti}"></span></font>
+      </p>
+      <p><div>なので、<font size="6"><span th:text="${taikei}"></span></font>です。</div>
+      <p><input type="submit" value="やり直す↩" style="width:130px;height:50px">
+      </p>
+      <table border="1" style="border-collapse: collapse"><tr><td>
+      男性のBMI判定基準
+      <table border="1" style="border-collapse: collapse">
+         <tr>
+            <th>BMI値</th>
+            <th>判定</th>
+         </tr>
+         <tr>
+            <td>19未満</td>
+            <td>痩せ気味</td>
+         </tr>
+         <tr>
+            <td>19～25未満</td>
+            <td>普通</td>
+         </tr>
+         <tr>
+            <td>25～30未満</td>
+            <td>肥満傾向</td>
+         </tr>
+         <tr>
+            <td>30～40未満</td>
+            <td>肥満</td>
+         </tr>
+         <tr>
+            <td>40以上</td>
+            <td>重度な肥満</td>
+         </tr>
+      </table>
+      <!-- <br> -->
+      </td>
+      <td valign="top">
+      女性のBMI判定基準
+      <table border="1" style="border-collapse: collapse">
+         <tr>
+            <th>BMI値</th>
+            <th>判定</th>
+         </tr>
+         <tr>
+            <td>18未満</td>
+            <td>痩せ気味</td>
+         </tr>
+         <tr>
+            <td>18～24未満</td>
+            <td>普通</td>
+         </tr>
+         <tr>
+            <td>24～30未満</td>
+            <td>肥満傾向</td>
+         </tr>
+         <tr>
+            <td>30～40未満</td>
+            <td>肥満</td>
+         </tr>
+         <tr>
+            <td>40以上</td>
+            <td>重度な肥満</td>
+         </tr>
+      </table>
+      </td></tr></table>
+      <br>
+   </form>
+   <br>
+   <form method="get" action="topmenuBmi">
+      <input type="submit" value="TOPメニューへ戻る">
+   </form>
+</body>
+</html>
