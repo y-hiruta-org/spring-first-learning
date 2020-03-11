@@ -9,42 +9,53 @@
 </head>
 <body>
    <h1>復習編～BMIチェック～</h1>
-   <p>
+   <br>
    <form method="get" action="bmioutform">
-      <font size="5"><span th:text="${seibetu}"></span></font>であるあなたのBMI数値は。。。
-   </p>
-      <p>
-         　　<font size="6"><span th:text="${bmisuti}"></span></font>
-      </p>
-      <p><div>なので、<font size="6"><span th:text="${taikei}"></span></font>です。</div>
-      <p><input type="submit" value="やり直す↩" style="width:130px;height:50px">
-      </p>
+      <font size="4"><span th:text="${seibetu}"></span></font>であるあなたのBMI数値は。。。
+      <font size="6"><span th:text="${bmisuti}"></span></font>なので、
+      <font size="4"><span th:text="${taikei}"></span></font>です。
+      <br>
+      <p>あなたの体重は<span th:text="${taijyu}"></span>
+      kg　身長は<span th:text="${sincho}"></span>cm</p>
+      <p>下の表であなたの状態をチェック↓</p>
       <table border="1" style="border-collapse: collapse"><tr><td>
       男性のBMI判定基準
       <table border="1" style="border-collapse: collapse">
          <tr>
             <th>BMI値</th>
             <th>判定</th>
+            <th>適正体重</th>
+            <th>適正体重との比較</th>
          </tr>
          <tr>
             <td>19未満</td>
             <td>痩せ気味</td>
+            <td th:text="${tekisei1}"></td>
+            <td th:text="${hikaku1}"></td>
          </tr>
          <tr>
             <td>19～25未満</td>
             <td>普通</td>
+            <td th:text="${tekisei2}"></td>
+            <td th:text="${hikaku2}"></td>
          </tr>
          <tr>
             <td>25～30未満</td>
             <td>肥満傾向</td>
+            <td th:text="${tekisei3}"></td>
+            <td th:text="${hikaku3}"></td>
          </tr>
          <tr>
             <td>30～40未満</td>
             <td>肥満</td>
+            <td th:text="${tekisei4}"></td>
+            <td th:text="${hikaku4}"></td>
          </tr>
          <tr>
             <td>40以上</td>
             <td>重度な肥満</td>
+            <td th:text="${tekisei5}"></td>
+            <td th:text="${hikaku5}"></td>
          </tr>
       </table>
       <!-- <br> -->
@@ -55,32 +66,46 @@
          <tr>
             <th>BMI値</th>
             <th>判定</th>
+            <th>適正体重</th>
+            <th>適正体重との比較</th>
          </tr>
          <tr>
             <td>18未満</td>
             <td>痩せ気味</td>
+            <td th:text="${tekisei6}"></td>
+            <td th:text="${hikaku6}"></td>
          </tr>
          <tr>
             <td>18～24未満</td>
             <td>普通</td>
+            <td th:text="${tekisei7}"></td>
+            <td th:text="${hikaku7}"></td>
          </tr>
          <tr>
             <td>24～30未満</td>
             <td>肥満傾向</td>
+            <td th:text="${tekisei8}"></td>
+            <td th:text="${hikaku8}"></td>
          </tr>
          <tr>
             <td>30～40未満</td>
             <td>肥満</td>
+            <td th:text="${tekisei9}"></td>
+            <td th:text="${hikaku9}"></td>
          </tr>
          <tr>
             <td>40以上</td>
             <td>重度な肥満</td>
+            <td th:text="${tekisei0}"></td>
+            <td th:text="${hikaku0}"></td>
          </tr>
       </table>
       </td></tr></table>
       <br>
    </form>
    <br>
+   <p><input type="submit" value="やり直す↩" style="width:130px;height:50px">
+      </p>
    <form method="get" action="topmenuBmi">
       <input type="submit" value="TOPメニューへ戻る">
    </form>
