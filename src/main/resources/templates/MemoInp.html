@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/TopMenu_Sub.css" th:href="@{/css/TopMenu_Sub.css}"
+	rel="stylesheet"></link>
+<script type="text/javascript" th:src="@{/js/Memo.js}"></script>
+<title>メモプログラム</title>
+</head>
+<body onload="load()">
+	<h1>メモアプリ</h1>
+		<form method="get" action="memoform">
+			<p>
+				メモ：<input type="text" name="TextMemo">
+				<br><input type="submit" value="追加">
+			</p>
+		</form>
+		<form method="get" action="topmenu">
+			<input type="submit" value="TOPメニューへ戻る">
+		</form>
+</body>
+</html>
