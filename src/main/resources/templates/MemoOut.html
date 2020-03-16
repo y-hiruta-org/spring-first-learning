@@ -11,13 +11,11 @@
 	<h1>メモアプリ</h1>
 		<form method="get" action="memoform">
 			<p>メモ一覧</p>
-			<p th:text="${memo1}"></p>
+			<p th:text="${TextMemo}"></p>
 			<p>
 				<input type="submit" value="保存">
 				<input type="submit" value="削除">
 			</p>
-		</form>
-		<form method="get" action="topmenu">
 			<input type="submit" value="TOPメニューへ戻る">
 		</form>
 </body>
