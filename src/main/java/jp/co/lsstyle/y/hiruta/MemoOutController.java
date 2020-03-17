@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MemoOutController {
 
 	@RequestMapping(value="/MemoOut", method = RequestMethod.GET)
-	private String MemoOut() {
-		return "/MemoOut.html";
+	private String memoout() {
+		return "memoout";
 	}
 }

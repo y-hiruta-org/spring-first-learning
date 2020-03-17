@@ -5,8 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class MemoInpForm {
+public class MemoOutForm {
 
 	//テキスト
-	private String textmemo;
+	private String TextMemo;
 }

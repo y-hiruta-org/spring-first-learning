@@ -9,9 +9,9 @@
 </head>
 <body>
 	<h1>メモアプリ</h1>
-		<form method="get" action="memoform">
+		<form method="get" action="/memoform" th:object="${memoinpform}">
 			<p>メモ一覧</p>
-			<p th:text="${TextMemo}"></p>
+			<p th:name="${textmemo}"></p>
 			<p>
 				<input type="submit" value="保存">
 				<input type="submit" value="削除">
