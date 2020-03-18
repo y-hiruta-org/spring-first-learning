@@ -1,29 +1,46 @@
 package jp.co.lsstyle.y.hiruta;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-//import org.springframework.web.bind.annotation.ModelAttribute;
+//import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+
+
 @Controller
 public class MemoInpController {
-	@RequestMapping(value="/MemoInp", method = RequestMethod.GET)
-	private String memoinp(Model model) {
-		model.addAttribute("memoinpform", new MemoInpForm());
-		return "memoinp";
+
+	/**
+	 * 初期表示処理
+	 *
+	 * @return ModelAndView 画面情報
+	 */
+	@RequestMapping(value="/memoInp", method = RequestMethod.GET)
+	private ModelAndView memoInp(ModelAndView model) {
+		//model.addObject("memoInpForm", new MemoInpForm());
+		model.setViewName("/MemoInp.html");
+		return model;
 	}
 
-	@RequestMapping(value = {"/memoform"}, method = {RequestMethod.POST})
+
+	/**
+	 * フォーム処理
+	 *
+	 * @param model 画面情報
+	 * @param form フォーム
+	 * @param textMemo
+	 * @return 画面情報
+	 */
+	@RequestMapping(value = {"/memoForm"}, method = {RequestMethod.POST})
 	public ModelAndView memo(
-			@RequestParam(name = "textmemo", required = false) String textmemo) {
-		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("textmemo", textmemo);
-		modelAndView.setViewName("/MemoOut.html");
-		return modelAndView;
+			@ModelAttribute MemoInpForm form, ModelAndView model) {
+		//ModelAndView modelAndView = new ModelAndView();
+		model.addObject("textMemo", form.getTextMemo());
+		model.setViewName("/MemoOut.html");
+		return model;
 
 		}
 

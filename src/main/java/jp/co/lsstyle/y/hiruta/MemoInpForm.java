@@ -8,5 +8,9 @@ import lombok.Setter;
 public class MemoInpForm {
 
 	//テキスト
-	private String textmemo;
+	private String textMemo;
+
+	public String getTextMemo() {
+		return textMemo;
+	}
 }

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MemoOutController {
 
-	@RequestMapping(value="/MemoOut", method = RequestMethod.GET)
+	@RequestMapping(value="/memoOut", method = RequestMethod.GET)
 	private String memoout() {
-		return "memoout";
+		return "memoOut";
 	}
 }

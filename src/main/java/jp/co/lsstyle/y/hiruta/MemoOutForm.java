@@ -8,5 +8,5 @@ import lombok.Setter;
 public class MemoOutForm {
 
 	//テキスト
-	private String TextMemo;
+	private String textMemo;
 }
