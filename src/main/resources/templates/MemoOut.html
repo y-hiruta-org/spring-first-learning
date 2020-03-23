@@ -11,7 +11,7 @@
 	<h1>メモアプリ</h1>
 		<form method="get" action="/memoForm" th:object="${memoInpForm}">
 			<p>メモ一覧</p>
-			<p th:text="${textMemo}"></p>
+			<p th:text="*{textMemo}"></p>
 			<p>
 				<input type="submit" value="保存">
 				<input type="submit" value="削除">

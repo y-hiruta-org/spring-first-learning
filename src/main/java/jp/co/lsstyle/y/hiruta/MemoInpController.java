@@ -19,7 +19,8 @@ public class MemoInpController {
 	 * @return ModelAndView 画面情報
 	 */
 	@RequestMapping(value="/memoInp", method = RequestMethod.GET)
-	private ModelAndView memoInp(ModelAndView model) {
+	private ModelAndView memoInp(ModelAndView model, MemoInpForm form) {
+		model.addObject("memoInpForm", form);
 		model.setViewName("/MemoInp.html");
 		return model;
 	}
@@ -35,8 +36,8 @@ public class MemoInpController {
 	 */
 	@RequestMapping(value = {"/memoForm"}, method = RequestMethod.POST)
 	public ModelAndView memo(
-			@ModelAttribute MemoInpForm form, ModelAndView model) {
-		model.addObject("textMemo", form);
+			@ModelAttribute("memoInpForm") MemoInpForm form, ModelAndView model) {
+		model.addObject("memoInpForm", form);
 		model.setViewName("/MemoOut.html");
 		return model;
 
