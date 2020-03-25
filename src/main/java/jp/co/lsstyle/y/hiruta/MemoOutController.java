@@ -3,12 +3,15 @@ package jp.co.lsstyle.y.hiruta;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MemoOutController {
 
 	@RequestMapping(value="/memoOut", method = RequestMethod.GET)
-	private String memoout() {
-		return "memoOut";
+	private ModelAndView memoOut(ModelAndView model, MemoOutForm form) {
+		model.addObject("memoOutForm", form);
+		model.setViewName("/MemoOut.html");
+		return model;
 	}
 }
