@@ -14,4 +14,11 @@ public class MemoOutController {
 		model.setViewName("/MemoOut.html");
 		return model;
 	}
+
+	@RequestMapping(value = "/memoOutButton",params = "memoBack", method = RequestMethod.POST)
+	private ModelAndView memoButton(ModelAndView model) {
+		model.setViewName("/MemoInp.html");
+		return model;
+	}
+
 }
