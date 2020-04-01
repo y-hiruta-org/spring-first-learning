@@ -8,17 +8,18 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MemoOutController {
 
-	@RequestMapping(value="/memoOut", method = RequestMethod.GET)
-	private ModelAndView memoOut(ModelAndView model, MemoOutForm form) {
+//	@RequestMapping(value="/memoOut", method = RequestMethod.GET)
+//	private ModelAndView memoOut(ModelAndView model, MemoOutForm form) {
+//		model.addObject("memoOutForm", form);
+//		model.setViewName("/MemoOut.html");
+//		return model;
+//	}
+
+	@RequestMapping(value="memoOutButton",params = "memoBack", method = RequestMethod.POST)
+	private ModelAndView memoSave(ModelAndView model, MemoOutForm form) {
 		model.addObject("memoOutForm", form);
-		model.setViewName("/MemoOut.html");
+		model.setViewName("/MemoInp.html");
 		return model;
-	}
-
-	@RequestMapping(value = "memoOutButton",params = "memoBack", method = RequestMethod.POST)
-	String memoBack() {
-		return "/MemoInp.html";
-
 	}
 
 }
