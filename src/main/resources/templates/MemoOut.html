@@ -16,6 +16,8 @@
 		</form>
 		<form method="post" action="/memoOutButton">
 			<p>
+				<p th:text="*{textOut}"></p>
+			<p>
 				<input type="submit" value="保存" name="memoSave">
 				<input type="submit" value="戻る" name="memoBack">
 			</p>
