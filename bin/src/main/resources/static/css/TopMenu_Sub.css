@@ -1,0 +1,17 @@
+@charset "UTF-8";
+body {
+    background-color: #FFFFCC;
+}
+p {
+    color: #005FFF;
+}
+h1 {
+	color: #ffffff;
+	background-color: #005FFF;
+}
+input {
+	color: #005FFF;
+}
+form {
+	color: #005FFF;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/TopMenu_Sub.css" th:href="@{/css/TopMenu_Sub.css}" rel="stylesheet"></link>
+<script type="text/javascript" th:src="@{/js/WebComponent.js}"></script>
+<title>Text</title>
+</head>
+<body>
+	<h1>復習編～性別～</h1>
+	<br>
+	<p>あなたの性別は？</p>
+	<br>
+	<form method="get" action="testform">
+	<input type="radio" name="q1" value="0"> 男
+	<input type="radio" name="q1" value="1"> 女
+	<br>
+	<p><input type="submit" value="送信"></p>
+	</form>
+	<form action="http://localhost:8080/TopMenu">
+	<input type="submit" value="TOPメニューへ戻る">
+	</form>
+</body>
+</html>
