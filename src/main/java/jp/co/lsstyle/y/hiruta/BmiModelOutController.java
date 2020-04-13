@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class BmiModelOutController {
 
-	@RequestMapping(value="/BmiModelOut", method = RequestMethod.GET)
+	@RequestMapping(value="/BmiModelOut", method = RequestMethod.POST)
 	private ModelAndView BmiModelOut(ModelAndView model) {
 		model.setViewName("/BmiModelOut.html");
 		return model;

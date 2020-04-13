@@ -11,7 +11,7 @@
    <p>
       <font size="5">身長と体重を記入してBMIを知ろう☆</font>
    </p>
-   <form method="post" action="@{/bmimodelform}" th:object="${bmiModelInpForm}">
+   <form method="get" th:action="@{/bmimodelform}" th:object="${bmiModelInpForm}">
       <p>
          男性<input type="radio" name="sex" value="0" checked="checked"/>
          女性<input type="radio" name="sex" value="1" />

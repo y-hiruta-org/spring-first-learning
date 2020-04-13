@@ -16,7 +16,7 @@ public class BmiModelInpController {
 		return model;
 	}
 
-	@RequestMapping(value = {"/bmimodelform"}, method = RequestMethod.POST)
+	@RequestMapping(value = {"/bmimodelform"}, method = RequestMethod.GET)
 	public ModelAndView output1(
 
 		//parameterを受け取る
