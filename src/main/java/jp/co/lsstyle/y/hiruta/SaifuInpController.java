@@ -1,5 +1,7 @@
 package jp.co.lsstyle.y.hiruta;
 
+//import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,26 +22,26 @@ public class SaifuInpController {
 	@RequestMapping(value = { "/saifuInpForm" }, method = RequestMethod.GET)
 	public ModelAndView output1(
 
-			//parameterを受け取る
-			//formを受け取る
-			@ModelAttribute("saifuForm") ModelAndView model,
-			//金額
-			@RequestParam(name = "atai1") int ataiOne) {
+		//parameterを受け取る
+		//formを受け取る
+		@ModelAttribute("saifuForm") ModelAndView model,
+		//金額
+		@RequestParam(name = "atai1") int ataiOne) {
 
-		//計算結果用変数の初期化
-		int sumInt = 0;
+//			ArrayList<Integer> okaneList = new ArrayList<>();
 
-		//SaifuOut.htmlへ値を送る（仮）
-		model.addObject("Atai1", 1万);
-		model.addObject("Atai2", 5千);
-		model.addObject("Atai3", 1千);
-		model.addObject("Atai4", 5百);
-		model.addObject("Atai5", 百);
-		model.addObject("Atai6", 五十);
-		model.addObject("Atai7", 十);
-		model.addObject("Atai8", 五);
-		model.addObject("Atai9", １);
-		model.setViewName("/saifuOut");
-		return model;
+			int [] kinshuInt = {10000, 5000, 2000, 1000, 500, 100, 50, 10, 5, 1};
+
+			int kingakuInt = ataiOne;
+
+			for (int i = 0 ; i < kinshuInt.length ; i++) {
+				int maisuInt = kingakuInt / kinshuInt[i];
+				model.addObject("Atai1", kinshuInt[i]);
+				model.addObject("Atai2", maisuInt);
+				kingakuInt = kingakuInt % kinshuInt[i];
+			}
+
+			model.setViewName("/saifuOut");
+			return model;
 	}
 }
