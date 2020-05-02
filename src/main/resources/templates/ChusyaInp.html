@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/TopMenu_Sub.css" th:href="@{/css/TopMenu_Sub.css}" rel="stylesheet"></link>
+<script type="text/javascript" th:src="@{/js/WebComponent.js}"></script>
+<title>駐車料金</title>
+</head>
+<body>
+	<h1>駐車料金</h1>
+	<p ><font size="5">駐車料金はいくら？</font></p>
+	<form method="get" th:action="@{/chusyaInpForm}" th:object="${chusyaForm}">
+	<p>1000円で60分駐車可能</p>
+	<p>延長するならば，30分ごとに600円加算</p>
+	<p>駐車時間(分)を入力<input type="text" name="atai1" oninput="value = value.replace(/[^0-9]+/i,'');" /></p>
+	<input type="submit" value="確認する" style="width:100px;height:50px">
+	</form>
+	<form action="http://localhost:8080/TopMenu">
+	<input type="submit" value="TOPメニューへ戻る">
+	</form>
+</body>
+</html>
